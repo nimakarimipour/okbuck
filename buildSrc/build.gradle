@@ -28,8 +28,8 @@ autoFixMode {
 }
 
 annotationEditor {
-    remove = ["org.checkerframework.checker.nullness.qual.Nullable", "org.checkerframework.checker.nullness.qual.NonNull"]
-    subProjects = ["caffeine"]
+    remove = ["javax.annotations.Nullable", "javax.annotations.Nonnull"]
+    subProjects = ["plugin"]
 }
 
 repositories {
