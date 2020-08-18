@@ -24,7 +24,7 @@ def build = [
         kotlinPlugin     : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
         kotlinAllOpen    : "org.jetbrains.kotlin:kotlin-allopen:${versions.kotlin}",
         manifestMerger   : "com.android.tools.build:manifest-merger:26.1.2",
-        nullaway         : "com.uber.nullaway:nullaway:0.5.3",
+        nullaway         : "edu.ucr.cs.riple:nullaway:0.7.12-SNAPSHOT",
         rockerPlugin     : "gradle.plugin.com.fizzed:rocker-gradle-plugin:${versions.rocker}",
         rockerRuntime    : "com.fizzed:rocker-runtime:${versions.rocker}",
         shadowJar        : "com.github.jengelman.gradle.plugins:shadow:2.0.1",

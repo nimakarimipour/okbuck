@@ -3,12 +3,14 @@ import java.text.SimpleDateFormat
 buildscript {
     apply from: "../dependencies.gradle"
     repositories {
+        mavenLocal()
         gradlePluginPortal()
     }
     dependencies {
         classpath deps.build.bintrayPlugin
         classpath deps.build.errorpronePlugin
         classpath deps.build.rockerPlugin
+        classpath 'edu.ucr.cs.riple:NullAwayAutoFixer:1.0-SNAPSHOT'
     }
 }
 
@@ -18,8 +20,20 @@ apply plugin: "com.fizzed.rocker"
 apply plugin: "net.ltgt.errorprone"
 
 apply from: "../dependencies.gradle"
+apply plugin: 'edu.ucr.cs.riple.plugin'
+
+autoFixMode {
+    fixPath = "/tmp/NullAwayFix"
+    maximumRound = 20
+}
+
+annotationEditor {
+    remove = ["org.checkerframework.checker.nullness.qual.Nullable", "org.checkerframework.checker.nullness.qual.NonNull"]
+    subProjects = ["caffeine"]
+}
 
 repositories {
+    mavenLocal()
     jcenter()
     google()
     // Remove once butterknife is updated to a stable version
@@ -73,6 +87,7 @@ tasks.withType(JavaCompile) {
             "-XepDisableWarningsInGeneratedCode",
             "-Xep:NullAway:ERROR",
             "-XepOpt:NullAway:AnnotatedPackages=com.uber",
+            "-XepOpt:NullAway:AutoFix=true",
             "-XepOpt:NullAway:TreatGeneratedAsUnannotated=true",
             "-Xep:BooleanParameter:OFF",
             "-Xep:ReturnMissingNullable:OFF",
