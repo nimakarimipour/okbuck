@@ -1,5 +1,5 @@
 include "another-app"
-include "app"
+//include "app"
 include "dummy-transform"
 include "dummylibrary"
 include "java-app"
