@@ -44,6 +44,7 @@ dependencies {
     annotationProcessor deps.apt.autoValue
     annotationProcessor deps.build.nullaway
     annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.13-java-8-SNAPSHOT"
+    annotationProcessor "edu.ucr.cs.riple.annot-util:AnnotLocator:0.1"
 
     errorprone deps.build.erroproneCompiler
     // errorproneJavac "com.google.errorprone:javac:1.8.0-u20"
@@ -74,6 +75,7 @@ tasks.withType(JavaCompile) {
     options.compilerArgs += [
         "-Xep:NullAway:WARN", 
         "-Xep:AnnotatorScanner:ERROR", 
+        "-Xep:AnnotLocator:ERROR", 
         "-XepOpt:NullAway:AnnotatedPackages=com.uber", 
         "-XepOpt:NullAway:SerializeFixMetadata=true", 
         "-XepOpt:NullAway:FixSerializationConfigPath=/home/nima/Developer/nullness-benchmarks/okbuck/annotator-out/nullaway.xml", 

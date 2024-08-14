@@ -23,7 +23,7 @@ def run_annotator():
     commands += ['-i', 'com.uber.nullaway.annotation.Initializer']
     commands += ['-n', 'javax.annotation.Nullable']
     commands += ['-cn', 'NULLAWAY']
-    commands += ["--depth", "25"]
+    commands += ["--depth", "5"]
     # Uncomment to see build output
     # commands += ['-rboserr']
     # Comment to inject root at a time
