@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A persistent data store for simple string key/value pairs that auto cleans up entries that are no
@@ -36,12 +37,12 @@ public final class Store {
   }
 
   @Nullable
-  public String get(String key) {
+  public String get(@NotNull String key) {
     accessed.add(key);
     return props.getProperty(key);
   }
 
-  public void set(String key, String val) {
+  public void set(@NotNull String key, @NotNull String val) {
     accessed.add(key);
     props.setProperty(key, val);
   }

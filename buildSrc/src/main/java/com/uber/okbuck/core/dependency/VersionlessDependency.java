@@ -2,8 +2,6 @@ package com.uber.okbuck.core.dependency;
 
 import com.google.auto.value.AutoValue;
 import com.google.auto.value.extension.memoized.Memoized;
-import com.google.common.base.Splitter;
-import java.util.List;
 import java.util.Optional;
 
 @AutoValue
@@ -43,20 +41,19 @@ public abstract class VersionlessDependency {
   }
 
   public static VersionlessDependency fromMavenCoords(String s) {
-    List<String> parts = Splitter.on(COORD_DELIMITER).splitToList(s);
+    String[] parts = s.split(COORD_DELIMITER);
     VersionlessDependency versionless;
 
-    switch (parts.size()) {
+    switch (parts.length) {
       case 2:
-        versionless =
-            VersionlessDependency.builder().setGroup(parts.get(0)).setName(parts.get(1)).build();
+        versionless = VersionlessDependency.builder().setGroup(parts[0]).setName(parts[1]).build();
         break;
       case 3:
         versionless =
             VersionlessDependency.builder()
-                .setGroup(parts.get(0))
-                .setName(parts.get(1))
-                .setClassifier(parts.get(2))
+                .setGroup(parts[0])
+                .setName(parts[1])
+                .setClassifier(parts[2])
                 .build();
         break;
       default:

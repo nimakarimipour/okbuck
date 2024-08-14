@@ -3,7 +3,7 @@ package com.uber.okbuck.generator;
 import com.uber.okbuck.extension.OkBuckExtension;
 import com.uber.okbuck.template.config.BuckConfig;
 import java.util.Set;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public final class OkbuckBuckConfigGenerator {
 

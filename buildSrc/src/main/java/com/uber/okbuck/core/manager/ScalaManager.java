@@ -6,7 +6,6 @@ import com.uber.okbuck.core.dependency.DependencyCache;
 import com.uber.okbuck.core.util.ProjectUtil;
 import com.uber.okbuck.template.config.ScalaBuckFile;
 import java.util.Set;
-import javax.annotation.Nullable;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 
@@ -19,7 +18,7 @@ public final class ScalaManager {
   public static final String SCALA_LIBRARY_PATH = "/org/scala-lang";
 
   private final Project rootProject;
-  @Nullable private Set<String> dependencies;
+  private Set<String> dependencies;
 
   public ScalaManager(Project rootProject) {
     this.rootProject = rootProject;

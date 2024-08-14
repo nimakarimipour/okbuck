@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,7 +24,7 @@ import org.slf4j.LoggerFactory;
 public final class FileUtil {
   private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
 
-  private static final byte[] NEWLINE = System.lineSeparator().getBytes(StandardCharsets.UTF_8);
+  private static final byte[] NEWLINE = System.lineSeparator().getBytes();
 
   public static String getRelativePath(File root, File f) {
     Path fPath = f.toPath().toAbsolutePath();
@@ -98,7 +97,7 @@ public final class FileUtil {
         os.flush();
         os.close();
       } catch (IOException e) {
-        throw new IllegalStateException("Couldn't create the buck file", e);
+        throw new IllegalStateException("Couldn't create the buck file: %s", e);
       }
     }
   }

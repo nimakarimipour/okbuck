@@ -1,1 +1,5 @@
 kind	class	method	param	index	uri
+PARAMETER	com.uber.okbuck.OkBuckGradlePlugin	apply(org.gradle.api.Project)	rootProject	0	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/OkBuckGradlePlugin.java
+PARAMETER	com.uber.okbuck.core.model.base.Store	get(java.lang.String)	key	0	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Store.java
+PARAMETER	com.uber.okbuck.core.model.base.Store	set(java.lang.String,java.lang.String)	key	0	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Store.java
+PARAMETER	com.uber.okbuck.core.model.base.Store	set(java.lang.String,java.lang.String)	val	1	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Store.java

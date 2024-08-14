@@ -15,7 +15,6 @@ import com.android.builder.model.SourceProvider;
 import com.android.manifmerger.ManifestMerger2;
 import com.android.manifmerger.MergingReport;
 import com.android.utils.ILogger;
-import com.facebook.infer.annotation.Initializer;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.uber.okbuck.OkBuckGradlePlugin;
@@ -44,12 +43,12 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.annotation.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.api.tasks.testing.Test;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.kotlin.gradle.internal.AndroidExtensionsExtension;
 import org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper;
 import org.w3c.dom.Document;
@@ -188,34 +187,26 @@ public abstract class AndroidTarget extends JvmTarget {
   public List<Scope> getAptScopes() {
     Configuration configuration = getConfigurationFromVariant(getBaseVariant());
     AnnotationProcessorCache apCache = ProjectUtil.getAnnotationProcessorCache(getProject());
-    return configuration != null
-        ? apCache.getAnnotationProcessorScopes(getProject(), configuration)
-        : ImmutableList.of();
+    return apCache.getAnnotationProcessorScopes(getProject(), configuration);
   }
 
   @Override
   public List<Scope> getTestAptScopes() {
     Configuration configuration = getConfigurationFromVariant(getUnitTestVariant());
     AnnotationProcessorCache apCache = ProjectUtil.getAnnotationProcessorCache(getProject());
-    return configuration != null
-        ? apCache.getAnnotationProcessorScopes(getProject(), configuration)
-        : ImmutableList.of();
+    return apCache.getAnnotationProcessorScopes(getProject(), configuration);
   }
 
   @Override
   public Scope getApt() {
     Configuration configuration = getConfigurationFromVariant(getBaseVariant());
-    return configuration != null
-        ? getAptScopeForConfiguration(configuration)
-        : Scope.builder(getProject()).build();
+    return getAptScopeForConfiguration(configuration);
   }
 
   @Override
   public Scope getTestApt() {
     Configuration configuration = getConfigurationFromVariant(getUnitTestVariant());
-    return configuration != null
-        ? getAptScopeForConfiguration(configuration)
-        : Scope.builder(getProject()).build();
+    return getAptScopeForConfiguration(configuration);
   }
 
   @Override
@@ -311,9 +302,6 @@ public abstract class AndroidTarget extends JvmTarget {
             .map(
                 key -> {
                   ClassField classField = extraBuildConfig.get(key);
-                  if (classField == null) {
-                    throw new IllegalStateException("Invalid buildconfig value!");
-                  }
                   return String.format(
                       "%s %s = %s", classField.getType(), key, classField.getValue());
                 })
@@ -399,8 +387,6 @@ public abstract class AndroidTarget extends JvmTarget {
     return manifestXml;
   }
 
-  @Initializer
-  @SuppressWarnings("NullAway")
   private void ensureManifest() {
     try {
       Set<String> manifests =
@@ -736,7 +722,7 @@ public abstract class AndroidTarget extends JvmTarget {
   }
 
   @Override
-  public <T> T getProp(Map<String, T> map, @Nullable T defaultValue) {
+  public <T> T getProp(Map<String, T> map, T defaultValue) {
     String nameKey = getIdentifier() + StringUtils.capitalize(getName());
     String flavorKey = getIdentifier() + StringUtils.capitalize(getFlavor());
     String buildTypeKey = getIdentifier() + StringUtils.capitalize(getBuildType());

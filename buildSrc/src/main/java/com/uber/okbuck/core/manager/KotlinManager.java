@@ -7,7 +7,6 @@ import com.uber.okbuck.core.util.ProjectUtil;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import javax.annotation.Nullable;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.dsl.DependencyHandler;
@@ -17,10 +16,10 @@ public final class KotlinManager {
   public static final String KOTLIN_HOME_LOCATION =
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/kotlin_home";
   public static final String KOTLIN_ANDROID_EXTENSIONS_MODULE = "kotlin-android-extensions";
-  private static final String KOTLIN_ALLOPEN_MODULE = "kotlin-allopen";
+  public static final String KOTLIN_ALLOPEN_MODULE = "kotlin-allopen";
   public static final String KOTLIN_KAPT_PLUGIN = "kotlin-kapt";
   public static final String KOTLIN_LIBRARIES_LOCATION = KOTLIN_HOME_LOCATION + "/libexec/lib";
-  private static final String KOTLIN_LIBRARIES_CACHE_LOCATION = "3rdparty/org/jetbrains/kotlin";
+  public static final String KOTLIN_LIBRARIES_CACHE_LOCATION = "3rdparty/org/jetbrains/kotlin";
 
   private static final String KOTLIN_DEPS_CONFIG = "okbuck_kotlin_deps";
   private static final String KOTLIN_GROUP = "org.jetbrains.kotlin";
@@ -37,19 +36,19 @@ public final class KotlinManager {
 
   private final Project project;
 
-  @Nullable private String kotlinVersion;
+  private String kotlinVersion;
 
   public KotlinManager(Project project) {
     this.project = project;
   }
 
-  @Nullable
   public static String getDefaultKotlinVersion(Project project) {
     return ProjectUtil.findVersionInClasspath(project, KOTLIN_GROUP, KOTLIN_GRADLE_MODULE);
   }
 
   @SuppressWarnings("ResultOfMethodCallIgnored")
   public void setupKotlinHome(String kotlinVersion) {
+
     this.kotlinVersion = kotlinVersion;
 
     Configuration kotlinConfig = project.getConfigurations().maybeCreate(KOTLIN_DEPS_CONFIG);
@@ -81,10 +80,6 @@ public final class KotlinManager {
   }
 
   public void finalizeDependencies() {
-    if (kotlinVersion == null) {
-      throw new IllegalStateException("kotlinVersion is not setup");
-    }
-
     Path fromPath = project.file(KOTLIN_LIBRARIES_CACHE_LOCATION).toPath();
     Path toPath = project.file(KOTLIN_LIBRARIES_LOCATION).toPath();
 

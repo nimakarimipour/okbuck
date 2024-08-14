@@ -13,7 +13,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Set;
-import javax.annotation.Nullable;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 
@@ -25,7 +24,7 @@ public final class GroovyManager {
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/groovy_installation";
 
   private final Project rootProject;
-  @Nullable private Set<String> dependencies;
+  private Set<String> dependencies;
 
   public GroovyManager(Project rootProject) {
     this.rootProject = rootProject;
