@@ -1,0 +1,1 @@
+./gradlew buildSrc:compileJava --rerun-tasks
