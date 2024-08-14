@@ -1,0 +1,77 @@
+buildSrc/src/main/java/com/uber/okbuck/composer/android/AndroidLibraryRuleComposer.java:      @Nullable String appClass) {
+buildSrc/src/main/java/com/uber/okbuck/composer/android/AndroidTestRuleComposer.java:      @Nullable String appClass) {
+buildSrc/src/main/java/com/uber/okbuck/composer/android/KeystoreRuleComposer.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/composer/base/BuckRuleComposer.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/composer/base/BuckRuleComposer.java:  public static String fileRule(@Nullable final String filePath) {
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyCache.java:      Project project, DependencyManager dependencyManager, @Nullable String forcedConfiguration) {
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyCache.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  public static Configuration useful(@Nullable Configuration configuration) {
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  static String getModuleClassifier(String fileNameString, @Nullable String version) {
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/DependencyUtils.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:  @Nullable private Path realSourceFilePath;
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:  @Nullable private Path realLintFilePath;
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:      @Nullable String version,
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:      @Nullable String classifier,
+buildSrc/src/main/java/com/uber/okbuck/core/dependency/ExternalDependency.java:      @Nullable String version,
+buildSrc/src/main/java/com/uber/okbuck/core/manager/BuckManager.java:  @Nullable private Path realBuckBinaryPath;
+buildSrc/src/main/java/com/uber/okbuck/core/manager/GroovyManager.java:  @Nullable private Set<String> dependencies;
+buildSrc/src/main/java/com/uber/okbuck/core/manager/KotlinManager.java:  @Nullable private String kotlinVersion;
+buildSrc/src/main/java/com/uber/okbuck/core/manager/KotlinManager.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/manager/LintManager.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/manager/RobolectricManager.java:  @Nullable private ImmutableSet<String> dependencies;
+buildSrc/src/main/java/com/uber/okbuck/core/manager/ScalaManager.java:  @Nullable private Set<String> dependencies;
+buildSrc/src/main/java/com/uber/okbuck/core/manager/TransformManager.java:  @Nullable private ImmutableSet<String> dependencies;
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable private final Keystore keystore;
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable private final AndroidAppInstrumentationTarget appInstrumentationTarget;
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidAppTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidLibTarget.java:  @Nullable private final AndroidLibInstrumentationTarget libInstrumentationTarget;
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidLibTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidLibTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java:  private Configuration getConfigurationFromVariant(@Nullable BaseVariant variant) {
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java:  public <T> T getProp(Map<String, T> map, @Nullable T defaultValue) {
+buildSrc/src/main/java/com/uber/okbuck/core/model/android/ExoPackageScope.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:  @Nullable private final Configuration configuration;
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:  @Nullable private Set<String> annotationProcessors;
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:      @Nullable Configuration configuration,
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:      @Nullable Configuration configuration,
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:    @Nullable private Configuration configuration = null;
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java:    public Builder configuration(@Nullable Configuration configuration) {
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/Store.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/TargetCache.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/base/TargetCache.java:  public Target getTargetForVariant(Project targetProject, @Nullable String variant) {
+buildSrc/src/main/java/com/uber/okbuck/core/model/jvm/JvmTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/model/jvm/JvmTarget.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/task/OkBuckTask.java:      @Nullable String groovyHome,
+buildSrc/src/main/java/com/uber/okbuck/core/task/OkBuckTask.java:      @Nullable String kotlinHome,
+buildSrc/src/main/java/com/uber/okbuck/core/task/OkBuckTask.java:      @Nullable String scalaCompiler,
+buildSrc/src/main/java/com/uber/okbuck/core/task/OkBuckTask.java:      @Nullable String scalaLibrary) {
+buildSrc/src/main/java/com/uber/okbuck/core/util/ProguardUtil.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/util/ProjectUtil.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/core/util/ProjectUtil.java:  public static Target getTargetForVariant(Project targetProject, @Nullable String variant) {
+buildSrc/src/main/java/com/uber/okbuck/core/util/ProjectUtil.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/extension/ExternalDependenciesExtension.java:  @Nullable private Map<VersionlessDependency, List<String>> allowedVersionsMap;
+buildSrc/src/main/java/com/uber/okbuck/extension/ExternalDependenciesExtension.java:  @Nullable private Set<VersionlessDependency> allowAllVersionsSet;
+buildSrc/src/main/java/com/uber/okbuck/extension/KotlinExtension.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/extension/LintExtension.java:  @Nullable
+buildSrc/src/main/java/com/uber/okbuck/generator/BuckFileGenerator.java:      @Nullable String appClass,
+buildSrc/src/main/java/com/uber/okbuck/generator/BuckFileGenerator.java:  private static List<Rule> createRules(AndroidLibTarget target, @Nullable String appClass) {
+buildSrc/src/main/java/com/uber/okbuck/generator/OkbuckBuckConfigGenerator.java:      @Nullable String groovyHome,
+buildSrc/src/main/java/com/uber/okbuck/generator/OkbuckBuckConfigGenerator.java:      @Nullable String kotlinHome,
+buildSrc/src/main/java/com/uber/okbuck/generator/OkbuckBuckConfigGenerator.java:      @Nullable String scalaCompiler,
+buildSrc/src/main/java/com/uber/okbuck/generator/OkbuckBuckConfigGenerator.java:      @Nullable String scalaLibrary,
+buildSrc/src/main/java/com/uber/okbuck/generator/OkbuckBuckConfigGenerator.java:      @Nullable String proguardJar,

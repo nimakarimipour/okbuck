@@ -6,14 +6,14 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath deps.build.bintrayPlugin
+        // classpath deps.build.bintrayPlugin
         classpath deps.build.errorpronePlugin
         classpath deps.build.rockerPlugin
     }
 }
 
 apply plugin: "maven-publish"
-apply plugin: "com.jfrog.bintray"
+// apply plugin: "com.jfrog.bintray"
 apply plugin: "com.fizzed.rocker"
 apply plugin: "net.ltgt.errorprone"
 
@@ -44,6 +44,7 @@ dependencies {
     annotationProcessor deps.build.nullaway
 
     errorprone deps.build.erroproneCompiler
+    // errorproneJavac "com.google.errorprone:javac:1.8.0-u20"
     compileOnly deps.external.inferAnnotations
     compileOnly deps.apt.autoValueAnnotations
 
@@ -56,6 +57,8 @@ dependencies {
     implementation deps.build.rockerRuntime
 
     testImplementation deps.test.junit
+
+    //errorproneJavac("com.google.errorprone:javac:9-dev-r4023-3")
 }
 
 rocker {
@@ -68,6 +71,8 @@ rocker {
 tasks.withType(JavaCompile) {
     options.compilerArgs += ["-Werror", "-Xep:NullAway:ERROR", "-XepOpt:NullAway:AnnotatedPackages=com.uber", "-XepOpt:NullAway:TreatGeneratedAsUnannotated=true"]
 }
+
+
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = "javadoc"
@@ -94,31 +99,6 @@ publishing {
             artifact javadocJar
 
             artifactId "okbuck"
-        }
-    }
-}
-
-bintray {
-    user = project.properties.get("bintray.user")
-    key = project.properties.get("bintray.apikey")
-    publications = ["mavenJava"]
-    dryRun = false
-    publish = true
-    pkg {
-        repo = "gradle-plugins"
-        name = "okbuck"
-        userOrg = "uber"
-        desc = "Gradle plugin that lets developers utilize the Buck build system on a Gradle project"
-        websiteUrl = siteUrl
-        issueTrackerUrl = siteUrl + "/issues"
-        vcsUrl = gitUrl
-        licenses = ["MIT"]
-        labels = ["buck", "okbuck", "uber"]
-        publicDownloadNumbers = true
-        version {
-            name = publishVersion
-            released = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZ").format(new Date())
-            vcsTag = publishVersion
         }
     }
 }
