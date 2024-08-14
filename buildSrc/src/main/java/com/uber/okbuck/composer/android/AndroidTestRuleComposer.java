@@ -26,7 +26,7 @@ public final class AndroidTestRuleComposer extends AndroidBuckRuleComposer {
       AndroidLibTarget target,
       List<String> deps,
       final List<String> aidlRuleNames,
-      @Nullable String appClass) {
+       @Nullable String appClass) {
 
     List<String> testDeps = new ArrayList<>(deps);
     testDeps.add(":" + src(target));

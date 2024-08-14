@@ -59,7 +59,7 @@ public final class ProjectUtil {
     }
   }
 
-  public static DependencyCache getDependencyCache(Project project) {
+  @Nullable public static DependencyCache getDependencyCache(Project project) {
     return getPlugin(project).depCache;
   }
 
@@ -95,8 +95,8 @@ public final class ProjectUtil {
     return getTargetCache(project).getTargets(project);
   }
 
-  @Nullable
-  public static Target getTargetForVariant(Project targetProject, @Nullable String variant) {
+  
+  @Nullable public static Target getTargetForVariant(Project targetProject,  @Nullable String variant) {
     return getTargetCache(targetProject).getTargetForVariant(targetProject, variant);
   }
 
@@ -121,8 +121,8 @@ public final class ProjectUtil {
     return getPlugin(project).targetCache;
   }
 
-  @Nullable
-  public static String findVersionInClasspath(Project project, String group, String module) {
+  
+  @Nullable public static String findVersionInClasspath(Project project, String group, String module) {
     return project
         .getBuildscript()
         .getConfigurations()

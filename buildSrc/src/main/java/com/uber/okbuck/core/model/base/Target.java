@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import org.gradle.api.Project;
+import javax.annotation.Nullable;
 
 /**
  * A target is roughly equivalent to what can be built with gradle via the various assemble tasks.

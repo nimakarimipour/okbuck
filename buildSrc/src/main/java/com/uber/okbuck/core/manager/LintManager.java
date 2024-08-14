@@ -33,15 +33,15 @@ public final class LintManager {
   private final Project project;
   private final String lintBuckFile;
 
-  private Set<String> dependencies;
+  @Nullable private Set<String> dependencies;
 
   public LintManager(Project project, String lintBuckFile) {
     this.project = project;
     this.lintBuckFile = lintBuckFile;
   }
 
-  @Nullable
-  public static String getDefaultLintVersion(Project buckProject) {
+  
+  @Nullable public static String getDefaultLintVersion(Project buckProject) {
     return ProjectUtil.findVersionInClasspath(buckProject, LINT_GROUP, LINT_MODULE);
   }
 

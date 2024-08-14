@@ -19,8 +19,8 @@ public final class ProguardUtil {
 
   private ProguardUtil() {}
 
-  @Nullable
-  public static String getProguardJarPath(Project project) {
+  
+  @Nullable public static String getProguardJarPath(Project project) {
     String proguardVersion =
         ProjectUtil.findVersionInClasspath(project, PROGUARD_GROUP, PROGUARD_MODULE);
     Configuration proguardConfiguration =
