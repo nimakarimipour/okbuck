@@ -132,8 +132,8 @@ public class JvmTarget extends Target {
         .build();
   }
 
-  @Nullable
-  public LintOptions getLintOptions() {
+  
+  @Nullable public LintOptions getLintOptions() {
     return null;
   }
 
@@ -222,7 +222,7 @@ public class JvmTarget extends Target {
     return getProject().getPlugins().hasPlugin(ApplicationPlugin.class);
   }
 
-  @Nullable
+  
   public String getMainClass() {
     return getProject()
         .getConvention()

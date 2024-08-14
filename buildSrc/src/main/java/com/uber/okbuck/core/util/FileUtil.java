@@ -21,6 +21,7 @@ import org.apache.commons.io.FileUtils;
 import org.gradle.api.Project;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.annotation.Nullable;
 
 public final class FileUtil {
   private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
@@ -53,7 +54,7 @@ public final class FileUtil {
         .collect(MoreCollectors.toImmutableSet());
   }
 
-  public static void deleteQuietly(Path p) {
+  public static void deleteQuietly(@Nullable Path p) {
     try {
       Files.walkFileTree(
           p,

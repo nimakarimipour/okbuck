@@ -21,7 +21,7 @@ import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.TaskAction;
 
 /** A task to cleanup stale BUCK files */
-@SuppressWarnings({"WeakerAccess", "CanBeFinal", "unused", "ResultOfMethodCallIgnored", "NewApi"})
+
 public class OkBuckCleanTask extends DefaultTask {
 
   @Input public Set<Project> projects;

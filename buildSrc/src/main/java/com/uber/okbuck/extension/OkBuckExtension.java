@@ -11,7 +11,7 @@ import org.gradle.api.Action;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.Input;
 
-@SuppressWarnings("unused")
+
 public class OkBuckExtension {
 
   /** Build Tools Version */
@@ -45,7 +45,7 @@ public class OkBuckExtension {
   @Input public Map<String, List<String>> testExclude = new HashMap<>();
 
   /** Set of projects to generate buck configs for. Default is all subprojects of root project. */
-  @SuppressWarnings("CanBeFinal")
+  
   @Input
   public Set<Project> buckProjects;
 

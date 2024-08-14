@@ -27,7 +27,7 @@ import org.gradle.api.tasks.Nested;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 
-@SuppressWarnings({"WeakerAccess", "CanBeFinal", "unused", "ResultOfMethodCallIgnored", "NewApi"})
+
 public class OkBuckTask extends DefaultTask {
 
   public static final String CLASSPATH_ABI_MACRO = "classpath_abi";
@@ -116,10 +116,10 @@ public class OkBuckTask extends DefaultTask {
 
   private void generate(
       OkBuckExtension okbuckExt,
-      @Nullable String groovyHome,
-      @Nullable String kotlinHome,
-      @Nullable String scalaCompiler,
-      @Nullable String scalaLibrary) {
+       @Nullable String groovyHome,
+       @Nullable String kotlinHome,
+       @Nullable String scalaCompiler,
+       @Nullable String scalaLibrary) {
     // generate empty .buckconfig if it does not exist
     try {
       dotBuckConfig().createNewFile();

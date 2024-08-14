@@ -35,7 +35,7 @@ public final class Store {
     }
   }
 
-  @Nullable
+  
   public String get(String key) {
     accessed.add(key);
     return props.getProperty(key);
@@ -46,7 +46,7 @@ public final class Store {
     props.setProperty(key, val);
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
+  
   public void persist() {
     if (props.isEmpty()) {
       FileUtil.deleteQuietly(storeFile.toPath());

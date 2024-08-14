@@ -24,7 +24,7 @@ public final class AndroidLibraryRuleComposer extends AndroidBuckRuleComposer {
       AndroidLibTarget target,
       List<String> deps,
       final List<String> aidlRuleNames,
-      @Nullable String appClass) {
+       @Nullable String appClass) {
 
     Set<String> libraryDeps = new HashSet<>(deps);
     libraryDeps.addAll(external(getExternalDeps(target.getMain(), target.getProvided())));

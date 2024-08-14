@@ -22,7 +22,7 @@ public final class BuckManager {
 
   private final Project rootProject;
 
-  @Nullable private Path realBuckBinaryPath;
+   @Nullable private Path realBuckBinaryPath;
 
   public BuckManager(Project rootProject) {
     this.rootProject = rootProject;

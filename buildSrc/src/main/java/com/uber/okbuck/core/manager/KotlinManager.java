@@ -37,18 +37,18 @@ public final class KotlinManager {
 
   private final Project project;
 
-  @Nullable private String kotlinVersion;
+   @Nullable private String kotlinVersion;
 
   public KotlinManager(Project project) {
     this.project = project;
   }
 
-  @Nullable
-  public static String getDefaultKotlinVersion(Project project) {
+  
+  @Nullable public static String getDefaultKotlinVersion(Project project) {
     return ProjectUtil.findVersionInClasspath(project, KOTLIN_GROUP, KOTLIN_GRADLE_MODULE);
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
+  
   public void setupKotlinHome(String kotlinVersion) {
     this.kotlinVersion = kotlinVersion;
 

@@ -25,13 +25,13 @@ public final class GroovyManager {
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/groovy_installation";
 
   private final Project rootProject;
-  @Nullable private Set<String> dependencies;
+   @Nullable private Set<String> dependencies;
 
   public GroovyManager(Project rootProject) {
     this.rootProject = rootProject;
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
+  
   public void setupGroovyHome() {
     String groovyVersion = GroovySystem.getVersion();
 

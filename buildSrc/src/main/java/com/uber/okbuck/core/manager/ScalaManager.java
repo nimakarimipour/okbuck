@@ -19,13 +19,13 @@ public final class ScalaManager {
   public static final String SCALA_LIBRARY_PATH = "/org/scala-lang";
 
   private final Project rootProject;
-  @Nullable private Set<String> dependencies;
+   @Nullable private Set<String> dependencies;
 
   public ScalaManager(Project rootProject) {
     this.rootProject = rootProject;
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
+  
   public void setupScalaHome(String scalaVersion) {
     Configuration scalaConfig = rootProject.getConfigurations().maybeCreate(SCALA_DEPS_CONFIG);
     rootProject

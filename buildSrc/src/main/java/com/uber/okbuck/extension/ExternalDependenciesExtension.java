@@ -18,8 +18,8 @@ public class ExternalDependenciesExtension {
   /** Stores the dependencies which are allowed to have more than 1 version. */
   private List<String> allowAllVersions = new ArrayList<>();
 
-  @Nullable private Map<VersionlessDependency, List<String>> allowedVersionsMap;
-  @Nullable private Set<VersionlessDependency> allowAllVersionsSet;
+   @Nullable private Map<VersionlessDependency, List<String>> allowedVersionsMap;
+   @Nullable private Set<VersionlessDependency> allowAllVersionsSet;
 
   private synchronized Map<VersionlessDependency, List<String>> getAllowedVersionsMap() {
     if (allowedVersionsMap == null) {
@@ -51,7 +51,7 @@ public class ExternalDependenciesExtension {
         || getAllowedVersionsMap().containsKey(versionless);
   }
 
-  @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+  
   public boolean isAllowed(ExternalDependency dependency) {
     if (getAllowAllVersionsSet().contains(dependency.getVersionless())) {
       return true;

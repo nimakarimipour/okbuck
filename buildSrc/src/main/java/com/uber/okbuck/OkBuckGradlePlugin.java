@@ -31,6 +31,7 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.artifacts.Configuration;
+import javax.annotation.Nullable;
 
 // Dependency Tree
 //
@@ -66,8 +67,8 @@ public class OkBuckGradlePlugin implements Plugin<Project> {
   public static final String OKBUCK_STATE = OKBUCK_STATE_DIR + "/STATE";
   public final Map<Project, Map<String, Scope>> scopes = new ConcurrentHashMap<>();
 
-  public DependencyCache depCache;
-  public DependencyCache lintDepCache;
+  @Nullable public DependencyCache depCache;
+  @Nullable public DependencyCache lintDepCache;
   public TargetCache targetCache;
   public AnnotationProcessorCache annotationProcessorCache;
   public DependencyManager dependencyManager;
@@ -82,7 +83,7 @@ public class OkBuckGradlePlugin implements Plugin<Project> {
 
   // Only apply to the root project
   @Initializer
-  @SuppressWarnings("NullAway")
+  
   @Override
   public void apply(Project rootProject) {
     // Create extensions

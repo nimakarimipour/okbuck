@@ -79,8 +79,8 @@ public abstract class AndroidTarget extends JvmTarget {
   private final boolean lintExclude;
   private final boolean testExclude;
   private final boolean isTest;
-  private String manifestPath;
-  private String packageName;
+  @Nullable private String manifestPath;
+  @Nullable private String packageName;
 
   public AndroidTarget(Project project, String name, boolean isTest) {
     super(project, name);
@@ -377,7 +377,7 @@ public abstract class AndroidTarget extends JvmTarget {
         .collect(Collectors.toSet());
   }
 
-  public String getPackage() {
+  @Nullable public String getPackage() {
     if (packageName == null) {
       ensureManifest();
     }
@@ -385,7 +385,7 @@ public abstract class AndroidTarget extends JvmTarget {
     return packageName;
   }
 
-  public String getManifest() {
+  @Nullable public String getManifest() {
     if (manifestPath == null) {
       ensureManifest();
     }
@@ -400,7 +400,7 @@ public abstract class AndroidTarget extends JvmTarget {
   }
 
   @Initializer
-  @SuppressWarnings("NullAway")
+  
   private void ensureManifest() {
     try {
       Set<String> manifests =
@@ -565,8 +565,8 @@ public abstract class AndroidTarget extends JvmTarget {
     usesSdkNode.setAttribute("android:targetSdkVersion", targetSdk);
   }
 
-  @Nullable
-  private UnitTestVariant getUnitTestVariant() {
+  
+  @Nullable private UnitTestVariant getUnitTestVariant() {
     if (getBaseVariant() instanceof TestedVariant) {
       return ((TestedVariant) getBaseVariant()).getUnitTestVariant();
     } else {
@@ -574,8 +574,8 @@ public abstract class AndroidTarget extends JvmTarget {
     }
   }
 
-  @Nullable
-  TestVariant getInstrumentationTestVariant() {
+  
+  @Nullable TestVariant getInstrumentationTestVariant() {
     if (getBaseVariant() instanceof TestedVariant) {
       TestVariant testVariant = ((TestedVariant) getBaseVariant()).getTestVariant();
       if (testVariant != null) {
@@ -611,8 +611,8 @@ public abstract class AndroidTarget extends JvmTarget {
     }
   }
 
-  @Nullable
-  private Configuration getConfigurationFromVariant(@Nullable BaseVariant variant) {
+  
+  @Nullable private Configuration getConfigurationFromVariant( @Nullable BaseVariant variant) {
     Configuration configuration = null;
     if (isKapt) {
       configuration =
@@ -736,7 +736,7 @@ public abstract class AndroidTarget extends JvmTarget {
   }
 
   @Override
-  public <T> T getProp(Map<String, T> map, @Nullable T defaultValue) {
+  public <T> T getProp(Map<String, T> map,  @Nullable T defaultValue) {
     String nameKey = getIdentifier() + StringUtils.capitalize(getName());
     String flavorKey = getIdentifier() + StringUtils.capitalize(getFlavor());
     String buildTypeKey = getIdentifier() + StringUtils.capitalize(getBuildType());

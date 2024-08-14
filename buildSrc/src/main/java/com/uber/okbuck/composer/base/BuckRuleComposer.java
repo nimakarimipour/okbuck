@@ -17,8 +17,8 @@ public abstract class BuckRuleComposer {
     return external(deps);
   }
 
-  @Nullable
-  public static String fileRule(@Nullable final String filePath) {
+  
+  @Nullable public static String fileRule( @Nullable final String filePath) {
     if (filePath == null) {
       return null;
     }
