@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.util.Set;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
+import javax.annotation.Nullable;
 
 public final class BuckManager {
 
@@ -21,7 +22,7 @@ public final class BuckManager {
 
   private final Project rootProject;
 
-  private Path realBuckBinaryPath;
+  @Nullable private Path realBuckBinaryPath;
 
   public BuckManager(Project rootProject) {
     this.rootProject = rootProject;

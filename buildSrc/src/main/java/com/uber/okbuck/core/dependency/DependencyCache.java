@@ -39,7 +39,7 @@ public class DependencyCache {
   private final Map<VersionlessDependency, ExternalDependency> forcedDeps = new HashMap<>();
 
   public DependencyCache(
-      Project project, DependencyManager dependencyManager, @Nullable String forcedConfiguration) {
+      Project project, DependencyManager dependencyManager,  @Nullable String forcedConfiguration) {
     this.rootProject = project.getRootProject();
     this.dependencyManager = dependencyManager;
     this.fetchSources = ProjectUtil.getOkBuckExtension(project).getIntellijExtension().sources;
@@ -160,8 +160,8 @@ public class DependencyCache {
    * @param externalDependency The dependency
    * @return path to the lint jar in the cache.
    */
-  @Nullable
-  public String getLintJar(ExternalDependency externalDependency) {
+  
+  @Nullable public String getLintJar(ExternalDependency externalDependency) {
     ExternalDependency dependency =
         forcedDeps.getOrDefault(externalDependency.getVersionless(), externalDependency);
     if (dependency.getRealLintFilePath() != null) {

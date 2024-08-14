@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scanner>
-    <serialization active="true" />
-    <uuid>48bdbbd2-1295-493c-aa2a-9b859b1ba84a</uuid>
-    <path>/home/nima/Developer/nullness-benchmarks/okbuck/annotator-out/0</path>
-    <processor>
-        <LOMBOK active="true" />
-    </processor>
-    <annotations />
-</scanner>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><scanner><serialization active="false"/><uuid>e3d586ea-98a7-4bd1-8787-6f88047ce3db</uuid><path>/home/nima/Developer/nullness-benchmarks/okbuck/annotator-out/0</path><processor><LOMBOK active="true"/></processor><annotations/></scanner>

@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.dsl.DependencyHandler;
+import javax.annotation.Nullable;
 
 public final class KotlinManager {
 
@@ -36,18 +37,18 @@ public final class KotlinManager {
 
   private final Project project;
 
-  private String kotlinVersion;
+  @Nullable private String kotlinVersion;
 
   public KotlinManager(Project project) {
     this.project = project;
   }
 
-  public static String getDefaultKotlinVersion(Project project) {
+  @Nullable public static String getDefaultKotlinVersion(Project project) {
     return ProjectUtil.findVersionInClasspath(project, KOTLIN_GROUP, KOTLIN_GRADLE_MODULE);
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
-  public void setupKotlinHome(String kotlinVersion) {
+  
+  public void setupKotlinHome(@Nullable String kotlinVersion) {
 
     this.kotlinVersion = kotlinVersion;
 
@@ -97,7 +98,7 @@ public final class KotlinManager {
     copyFile(fromPath, toPath, KOTLIN_STDLIB_COMMON_MODULE, kotlinVersion);
   }
 
-  private static void copyFile(Path fromPath, Path toPath, String name, String version) {
+  private static void copyFile(Path fromPath, Path toPath, String name, @Nullable String version) {
 
     Path fromFilePath = fromPath.resolve(name + "--" + version + ".jar");
 

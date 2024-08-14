@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.util.Set;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
+import javax.annotation.Nullable;
 
 public final class GroovyManager {
 
@@ -24,13 +25,13 @@ public final class GroovyManager {
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/groovy_installation";
 
   private final Project rootProject;
-  private Set<String> dependencies;
+  @Nullable private Set<String> dependencies;
 
   public GroovyManager(Project rootProject) {
     this.rootProject = rootProject;
   }
 
-  @SuppressWarnings("ResultOfMethodCallIgnored")
+  
   public void setupGroovyHome() {
     String groovyVersion = GroovySystem.getVersion();
 

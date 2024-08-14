@@ -12,6 +12,7 @@ import java.util.EnumSet;
 import java.util.Set;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
+import javax.annotation.Nullable;
 
 public final class RobolectricManager {
 
@@ -20,7 +21,7 @@ public final class RobolectricManager {
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/robolectric";
 
   private final Project rootProject;
-  private ImmutableSet<String> dependencies;
+  @Nullable private ImmutableSet<String> dependencies;
 
   public RobolectricManager(Project rootProject) {
     this.rootProject = rootProject;
@@ -69,7 +70,7 @@ public final class RobolectricManager {
     }
   }
 
-  @SuppressWarnings("unused")
+  
   enum API {
     API_16("4.1.2_r1", "r1"),
     API_17("4.2.2_r1.2", "r1"),

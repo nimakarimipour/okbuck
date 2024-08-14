@@ -28,10 +28,10 @@ public final class ExternalDependency {
 
   public final BaseExternalDependency base;
 
-  @Nullable private Path realSourceFilePath;
+   @Nullable private Path realSourceFilePath;
   private boolean sourceFileInitialized;
 
-  @Nullable private Path realLintFilePath;
+   @Nullable private Path realLintFilePath;
   private boolean lintFileInitialized;
 
   @Override
@@ -141,8 +141,8 @@ public final class ExternalDependency {
    *
    * @param project The Project
    */
-  @Nullable
-  public Path getRealSourceFilePath(Project project) {
+  
+  @Nullable public Path getRealSourceFilePath(Project project) {
     if (!sourceFileInitialized) {
       realSourceFilePath = computeSourceFile(project);
       sourceFileInitialized = true;
@@ -156,8 +156,8 @@ public final class ExternalDependency {
   }
 
   /** Returns the real path of the lint jar file if present, null otherwise. */
-  @Nullable
-  public Path getRealLintFilePath() {
+  
+  @Nullable public Path getRealLintFilePath() {
     if (!lintFileInitialized) {
       if (getPackaging().equals(AAR)) {
         realLintFilePath =
@@ -175,8 +175,8 @@ public final class ExternalDependency {
     return realLintFilePath != null;
   }
 
-  @Nullable
-  private Path computeSourceFile(Project project) {
+  
+  @Nullable private Path computeSourceFile(Project project) {
     if (!DependencyUtils.isWhiteListed(getRealDependencyFile())
         && ImmutableList.of(JAR, AAR).contains(getPackaging())) {
 
@@ -206,8 +206,8 @@ public final class ExternalDependency {
   private ExternalDependency(
       String group,
       String name,
-      @Nullable String version,
-      @Nullable String classifier,
+       @Nullable String version,
+       @Nullable String classifier,
       File depFile,
       boolean isLocal,
       ExternalDependenciesExtension extension) {
@@ -245,7 +245,7 @@ public final class ExternalDependency {
   public static ExternalDependency from(
       String group,
       String name,
-      @Nullable String version,
+       @Nullable String version,
       File dependencyFile,
       ExternalDependenciesExtension extension) {
     String classifier = DependencyUtils.getModuleClassifier(dependencyFile.getName(), version);
