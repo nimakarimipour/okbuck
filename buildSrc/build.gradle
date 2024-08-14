@@ -20,6 +20,7 @@ apply plugin: "net.ltgt.errorprone"
 apply from: "../dependencies.gradle"
 
 repositories {
+    mavenLocal()
     jcenter()
     google()
     // Remove once butterknife is updated to a stable version
@@ -42,6 +43,7 @@ sourceSets.main.rocker.srcDirs = ["src/main/rocker", "src/main/java"]
 dependencies {
     annotationProcessor deps.apt.autoValue
     annotationProcessor deps.build.nullaway
+    annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.13-java-8-SNAPSHOT"
 
     errorprone deps.build.erroproneCompiler
     // errorproneJavac "com.google.errorprone:javac:1.8.0-u20"
@@ -69,7 +71,16 @@ rocker {
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs += ["-Werror", "-Xep:NullAway:ERROR", "-XepOpt:NullAway:AnnotatedPackages=com.uber", "-XepOpt:NullAway:TreatGeneratedAsUnannotated=true"]
+    options.compilerArgs += [
+        "-Werror", 
+        "-Xep:NullAway:ERROR", 
+        "-Xep:AnnotatorScanner:ERROR", 
+        "-XepOpt:NullAway:AnnotatedPackages=com.uber", 
+        "-XepOpt:NullAway:SerializeFixMetadata=true", 
+        "-XepOpt:NullAway:FixSerializationConfigPath=/home/nima/Developer/nullness-benchmarks/okbuck/annotator-out/nullaway.xml", 
+        "-XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/nullness-benchmarks/okbuck/annotator-out/scanner.xml", 
+        "-XepOpt:NullAway:TreatGeneratedAsUnannotated=true"
+    ]
 }
 
 

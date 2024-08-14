@@ -1,0 +1,17 @@
+kind	class	method	param	index	uri	field
+METHOD	com.uber.okbuck.template.core.Rule	ruleType(java.lang.String)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	ruleType
+METHOD	com.uber.okbuck.template.core.Rule	name(java.lang.String)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	name
+METHOD	com.uber.okbuck.template.core.Rule	deps(java.util.Collection)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	deps
+METHOD	com.uber.okbuck.template.core.Rule	labels(java.util.Collection)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	labels
+METHOD	com.uber.okbuck.template.core.Rule	visibility(java.util.Collection)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	visibility
+METHOD	com.uber.okbuck.template.core.Rule	defaultVisibility()	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	visibility
+METHOD	com.uber.okbuck.template.core.Rule	extraBuckOpts(java.util.Collection)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/Rule.java	extraBuckOpts
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	ruleType
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	name
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	visibility
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	deps
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	labels
+METHOD	com.uber.okbuck.template.core.RuleTemplate	__associate(com.fizzed.rocker.RockerTemplate)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/rocker/com/uber/okbuck/template/core/RuleTemplate.java	extraBuckOpts
+METHOD	com.uber.okbuck.core.model.base.Scope$Builder	javaResourceDirs(java.util.Set)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java	javaResourceDirs
+METHOD	com.uber.okbuck.core.model.base.Scope$Builder	sourceDirs(java.util.Set)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java	sourceDirs
+METHOD	com.uber.okbuck.core.model.base.Scope$Builder	depCache(com.uber.okbuck.core.dependency.DependencyCache)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/base/Scope.java	depCache
