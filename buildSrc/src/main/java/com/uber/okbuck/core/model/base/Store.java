@@ -35,7 +35,7 @@ public final class Store {
     }
   }
 
-  @Nullable
+  
   public String get(String key) {
     accessed.add(key);
     return props.getProperty(key);

@@ -116,10 +116,10 @@ public class OkBuckTask extends DefaultTask {
 
   private void generate(
       OkBuckExtension okbuckExt,
-      @Nullable String groovyHome,
-      @Nullable String kotlinHome,
-      @Nullable String scalaCompiler,
-      @Nullable String scalaLibrary) {
+       @Nullable String groovyHome,
+       @Nullable String kotlinHome,
+       @Nullable String scalaCompiler,
+       @Nullable String scalaLibrary) {
     // generate empty .buckconfig if it does not exist
     try {
       dotBuckConfig().createNewFile();

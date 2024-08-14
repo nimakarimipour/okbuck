@@ -42,8 +42,8 @@ public final class LintManager {
     this.lintBuckFile = lintBuckFile;
   }
 
-  @Nullable
-  public static String getDefaultLintVersion(Project buckProject) {
+  
+  @Nullable public static String getDefaultLintVersion(Project buckProject) {
     return ProjectUtil.findVersionInClasspath(buckProject, LINT_GROUP, LINT_MODULE);
   }
 

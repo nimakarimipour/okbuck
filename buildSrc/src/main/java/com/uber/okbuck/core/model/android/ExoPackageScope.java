@@ -34,8 +34,8 @@ public class ExoPackageScope extends Scope {
     extractDependencies(base, exoPackageDependencies);
   }
 
-  @Nullable
-  public String getAppClass() {
+  
+  @Nullable public String getAppClass() {
     String appClass = null;
 
     File manifestFile = project.getRootProject().file(manifest);

@@ -565,8 +565,8 @@ public abstract class AndroidTarget extends JvmTarget {
     usesSdkNode.setAttribute("android:targetSdkVersion", targetSdk);
   }
 
-  @Nullable
-  private UnitTestVariant getUnitTestVariant() {
+  
+  @Nullable private UnitTestVariant getUnitTestVariant() {
     if (getBaseVariant() instanceof TestedVariant) {
       return ((TestedVariant) getBaseVariant()).getUnitTestVariant();
     } else {
@@ -574,8 +574,8 @@ public abstract class AndroidTarget extends JvmTarget {
     }
   }
 
-  @Nullable
-  TestVariant getInstrumentationTestVariant() {
+  
+  @Nullable TestVariant getInstrumentationTestVariant() {
     if (getBaseVariant() instanceof TestedVariant) {
       TestVariant testVariant = ((TestedVariant) getBaseVariant()).getTestVariant();
       if (testVariant != null) {
@@ -611,8 +611,8 @@ public abstract class AndroidTarget extends JvmTarget {
     }
   }
 
-  @Nullable
-  private Configuration getConfigurationFromVariant(@Nullable BaseVariant variant) {
+  
+  @Nullable private Configuration getConfigurationFromVariant( @Nullable BaseVariant variant) {
     Configuration configuration = null;
     if (isKapt) {
       configuration =
@@ -736,7 +736,7 @@ public abstract class AndroidTarget extends JvmTarget {
   }
 
   @Override
-  public <T> T getProp(Map<String, T> map, @Nullable T defaultValue) {
+  public <T> T getProp(Map<String, T> map,  @Nullable T defaultValue) {
     String nameKey = getIdentifier() + StringUtils.capitalize(getName());
     String flavorKey = getIdentifier() + StringUtils.capitalize(getFlavor());
     String buildTypeKey = getIdentifier() + StringUtils.capitalize(getBuildType());

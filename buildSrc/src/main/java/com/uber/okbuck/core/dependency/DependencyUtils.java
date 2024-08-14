@@ -27,8 +27,8 @@ public final class DependencyUtils {
 
   private DependencyUtils() {}
 
-  @Nullable
-  public static Configuration useful(Project project, String configuration) {
+  
+  @Nullable public static Configuration useful(Project project, String configuration) {
     try {
       Configuration config = project.getConfigurations().getByName(configuration);
       return useful(config);
@@ -37,8 +37,8 @@ public final class DependencyUtils {
     }
   }
 
-  @Nullable
-  public static Configuration useful(@Nullable Configuration configuration) {
+  
+  @Nullable public static Configuration useful( @Nullable Configuration configuration) {
     if (configuration != null && configuration.isCanBeResolved()) {
       return configuration;
     }
@@ -63,8 +63,8 @@ public final class DependencyUtils {
     return FilenameUtils.isExtension(file.getName(), ALLOWED_EXTENSIONS);
   }
 
-  @Nullable
-  static String getModuleClassifier(String fileNameString, @Nullable String version) {
+  
+  @Nullable static String getModuleClassifier(String fileNameString,  @Nullable String version) {
     if (version == null) {
       return null;
     }
@@ -87,8 +87,8 @@ public final class DependencyUtils {
     }
   }
 
-  @Nullable
-  static Path getContentPath(Path zipFilePath, String contentFileName) {
+  
+  @Nullable static Path getContentPath(Path zipFilePath, String contentFileName) {
     try {
       FileSystem zipFile = FileSystems.newFileSystem(zipFilePath, null);
       Path packagedPath = zipFile.getPath(contentFileName);
@@ -102,8 +102,8 @@ public final class DependencyUtils {
     }
   }
 
-  @Nullable
-  static Path getSingleZipFilePath(Project project, File baseDir, String zipToFind) {
+  
+  @Nullable static Path getSingleZipFilePath(Project project, File baseDir, String zipToFind) {
     FileTree zipFiles =
         project.fileTree(
             ImmutableMap.of(

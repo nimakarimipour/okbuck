@@ -109,7 +109,7 @@ public final class BuckFileGenerator {
 
   private static List<Rule> createRules(
       AndroidLibTarget target,
-      @Nullable String appClass,
+       @Nullable String appClass,
       List<String> extraDeps,
       List<String> extraResDeps) {
 
@@ -164,7 +164,7 @@ public final class BuckFileGenerator {
     return new ArrayList<>(androidLibRules);
   }
 
-  private static List<Rule> createRules(AndroidLibTarget target, @Nullable String appClass) {
+  private static List<Rule> createRules(AndroidLibTarget target,  @Nullable String appClass) {
     return BuckFileGenerator.createRules(target, appClass, new ArrayList<>(), new ArrayList<>());
   }
 

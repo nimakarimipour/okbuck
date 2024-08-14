@@ -9,8 +9,8 @@ import org.gradle.api.Project;
 public class LintExtension {
 
   /** Lint jar version */
-  @SuppressWarnings("CanBeFinal")
-  @Nullable
+  @Nullable @SuppressWarnings("CanBeFinal")
+  
   public String version;
 
   /** Set to {@code true} to disable generation of lint rules */

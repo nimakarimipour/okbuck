@@ -7,8 +7,8 @@ import org.gradle.api.Project;
 public class KotlinExtension {
 
   /** Version of the kotlin compiler to use. */
-  @SuppressWarnings("CanBeFinal")
-  @Nullable
+  @Nullable @SuppressWarnings("CanBeFinal")
+  
   public String version;
 
   KotlinExtension(Project project) {

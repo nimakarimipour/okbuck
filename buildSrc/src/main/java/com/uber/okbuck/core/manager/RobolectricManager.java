@@ -21,7 +21,7 @@ public final class RobolectricManager {
       OkBuckGradlePlugin.DEFAULT_CACHE_PATH + "/robolectric";
 
   private final Project rootProject;
-  @Nullable private ImmutableSet<String> dependencies;
+   @Nullable private ImmutableSet<String> dependencies;
 
   public RobolectricManager(Project rootProject) {
     this.rootProject = rootProject;

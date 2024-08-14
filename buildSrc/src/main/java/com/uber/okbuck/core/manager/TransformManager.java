@@ -51,7 +51,7 @@ public final class TransformManager {
   private final Project rootProject;
   private final Map<Path, String> configFileToPathMap = new HashMap<>();
 
-  @Nullable private ImmutableSet<String> dependencies;
+   @Nullable private ImmutableSet<String> dependencies;
 
   public TransformManager(Project rootProject) {
     this.rootProject = rootProject;

@@ -12,11 +12,11 @@ public final class OkbuckBuckConfigGenerator {
   /** generate {@link BuckConfig} */
   public static BuckConfig generate(
       OkBuckExtension okbuck,
-      @Nullable String groovyHome,
-      @Nullable String kotlinHome,
-      @Nullable String scalaCompiler,
-      @Nullable String scalaLibrary,
-      @Nullable String proguardJar,
+       @Nullable String groovyHome,
+       @Nullable String kotlinHome,
+       @Nullable String scalaCompiler,
+       @Nullable String scalaLibrary,
+       @Nullable String proguardJar,
       Set<String> defs) {
 
     return new BuckConfig()

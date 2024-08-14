@@ -45,7 +45,7 @@ public class Scope {
 
   private final Set<String> javaResources;
   private final Set<String> sources;
-  @Nullable private final Configuration configuration;
+   @Nullable private final Configuration configuration;
   private final DependencyCache depCache;
   private final Map<Builder.COMPILER, List<String>> compilerOptions;
   protected final Project project;
@@ -53,7 +53,7 @@ public class Scope {
   private final Set<Target> targetDeps = new HashSet<>();
   private final Set<ExternalDependency> external = new HashSet<>();
 
-  @Nullable private Set<String> annotationProcessors;
+   @Nullable private Set<String> annotationProcessors;
 
   public final Set<String> getJavaResources() {
     return javaResources;
@@ -85,7 +85,7 @@ public class Scope {
 
   Scope(
       Project project,
-      @Nullable Configuration configuration,
+       @Nullable Configuration configuration,
       Set<File> sourceDirs,
       Set<File> javaResourceDirs,
       Map<Builder.COMPILER, List<String>> compilerOptions,
@@ -105,7 +105,7 @@ public class Scope {
 
   protected Scope(
       Project project,
-      @Nullable Configuration configuration,
+       @Nullable Configuration configuration,
       Set<File> sourceDirs,
       Set<File> javaResourceDirs,
       Map<Builder.COMPILER, List<String>> compilerOptions) {
@@ -418,7 +418,7 @@ public class Scope {
 
     private Set<File> javaResourceDirs = ImmutableSet.of();
     private Set<File> sourceDirs = ImmutableSet.of();
-    @Nullable private Configuration configuration = null;
+     @Nullable private Configuration configuration = null;
     private DependencyCache depCache;
     private Map<COMPILER, List<String>> compilerOptions = new LinkedHashMap<>();
 
@@ -437,7 +437,7 @@ public class Scope {
       return this;
     }
 
-    public Builder configuration(@Nullable Configuration configuration) {
+    public Builder configuration( @Nullable Configuration configuration) {
       this.configuration = configuration;
       return this;
     }

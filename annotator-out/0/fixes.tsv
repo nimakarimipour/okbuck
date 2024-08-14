@@ -1,3 +1,2 @@
 kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
-PARAMETER	com.uber.okbuck.core.util.FileUtil	deleteQuietly(java.nio.file.Path)	p	0	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/util/FileUtil.java	PASS_NULLABLE	nullable	com.uber.okbuck.core.manager.BuckManager	finalizeDependencies()
 METHOD	com.uber.okbuck.core.model.android.AndroidTarget	getProp(java.util.Map,T)	null	null	/home/nima/Developer/nullness-benchmarks/okbuck/buildSrc/src/main/java/com/uber/okbuck/core/model/android/AndroidTarget.java	RETURN_NULLABLE	nullable	com.uber.okbuck.core.model.android.AndroidTarget	getProp(java.util.Map,T)
