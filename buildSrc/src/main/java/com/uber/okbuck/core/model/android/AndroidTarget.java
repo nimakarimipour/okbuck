@@ -310,6 +310,9 @@ public abstract class AndroidTarget extends JvmTarget {
             .map(
                 key -> {
                   ClassField classField = extraBuildConfig.get(key);
+                  if (classField == null) {
+                    throw new IllegalStateException("Invalid buildconfig value!");
+                  }
                   return String.format(
                       "%s %s = %s", classField.getType(), key, classField.getValue());
                 })
