@@ -18,3 +18,5 @@ buck-out
 buildSrc/bintray.properties
 
 3rdparty
+
+.idea
