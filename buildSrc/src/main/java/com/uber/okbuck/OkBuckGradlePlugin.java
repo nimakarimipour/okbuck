@@ -1,5 +1,6 @@
 package com.uber.okbuck;
 
+import com.facebook.infer.annotation.Initializer;
 import com.uber.okbuck.core.annotation.AnnotationProcessorCache;
 import com.uber.okbuck.core.dependency.DependencyCache;
 import com.uber.okbuck.core.manager.BuckManager;
@@ -81,6 +82,8 @@ public class OkBuckGradlePlugin implements Plugin<Project> {
   RobolectricManager robolectricManager;
   BuckManager buckManager;
 
+  @Initializer
+  @SuppressWarnings("NullAway")
   // Only apply to the root project
   public void apply(@NotNull Project rootProject) {
     // Create extensions
