@@ -67,11 +67,14 @@ public class TargetCache {
 
   @Nullable
   public Target getTargetForVariant(Project targetProject, @Nullable String variant) {
-    Target result;
+    Target result = null;
     ProjectType type = ProjectUtil.getType(targetProject);
     switch (type) {
       case ANDROID_LIB:
-        result = artifactNameToTarget.get(targetProject).get(variant);
+        Map<String, Target> targetMap = artifactNameToTarget.get(targetProject);
+        if (targetMap != null) {
+          result = targetMap.get(variant);
+        }
         if (result == null) {
           throw new IllegalStateException(
               "No target found for " + targetProject.getDisplayName() + " for variant " + variant);
