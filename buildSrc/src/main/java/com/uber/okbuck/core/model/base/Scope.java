@@ -222,6 +222,7 @@ public class Scope {
    * @return String UID
    */
   public String getAnnotationProcessorsUID() {
+    Preconditions.checkNotNull(configuration);
     DependencySet dependencies = configuration.getAllDependencies();
     String processorsUID =
         dependencies
