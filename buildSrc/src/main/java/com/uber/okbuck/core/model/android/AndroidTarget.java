@@ -187,14 +187,18 @@ public abstract class AndroidTarget extends JvmTarget {
   public List<Scope> getAptScopes() {
     Configuration configuration = getConfigurationFromVariant(getBaseVariant());
     AnnotationProcessorCache apCache = ProjectUtil.getAnnotationProcessorCache(getProject());
-    return apCache.getAnnotationProcessorScopes(getProject(), configuration);
+    return configuration != null
+        ? apCache.getAnnotationProcessorScopes(getProject(), configuration)
+        : ImmutableList.of();
   }
 
   @Override
   public List<Scope> getTestAptScopes() {
     Configuration configuration = getConfigurationFromVariant(getUnitTestVariant());
     AnnotationProcessorCache apCache = ProjectUtil.getAnnotationProcessorCache(getProject());
-    return apCache.getAnnotationProcessorScopes(getProject(), configuration);
+    return configuration != null
+        ? apCache.getAnnotationProcessorScopes(getProject(), configuration)
+        : ImmutableList.of();
   }
 
   @Override
