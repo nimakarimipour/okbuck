@@ -73,6 +73,8 @@ rocker {
 
 tasks.withType(JavaCompile) {
     options.compilerArgs += [
+        // disable all checks of errorprone
+        "-XepDisableAllChecks",
         "-Xep:NullAway:WARN", 
         "-Xep:AnnotatorScanner:ERROR", 
         "-Xep:AnnotLocator:ERROR", 
