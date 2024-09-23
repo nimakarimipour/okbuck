@@ -33,7 +33,7 @@ public final class LintManager {
   private final Project project;
   private final String lintBuckFile;
 
-  private Set<String> dependencies;
+  @Nullable private Set<String> dependencies;
 
   public LintManager(Project project, String lintBuckFile) {
     this.project = project;

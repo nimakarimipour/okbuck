@@ -14,6 +14,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.tuple.Pair;
+import javax.annotation.Nullable;
 
 public final class AndroidBinaryRuleComposer extends AndroidBuckRuleComposer {
 
@@ -29,7 +30,7 @@ public final class AndroidBinaryRuleComposer extends AndroidBuckRuleComposer {
     // no instance
   }
 
-  public static Rule compose(AndroidAppTarget target, List<String> deps, String keystoreRuleName) {
+  public static Rule compose(AndroidAppTarget target, List<String> deps, @Nullable String keystoreRuleName) {
     Set<String> mappedCpuFilters =
         target
             .getCpuFilters()

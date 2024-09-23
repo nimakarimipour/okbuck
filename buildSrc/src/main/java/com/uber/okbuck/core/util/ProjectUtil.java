@@ -59,7 +59,7 @@ public final class ProjectUtil {
     }
   }
 
-  public static DependencyCache getDependencyCache(Project project) {
+  @Nullable public static DependencyCache getDependencyCache(Project project) {
     return getPlugin(project).depCache;
   }
 

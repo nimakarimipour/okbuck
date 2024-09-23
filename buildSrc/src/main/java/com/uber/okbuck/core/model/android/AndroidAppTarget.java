@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import javax.annotation.Nullable;
 
 /** An Android app target */
 public class AndroidAppTarget extends AndroidLibTarget {
@@ -33,7 +34,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
   private static final Logger LOG = LoggerFactory.getLogger(AndroidAppTarget.class);
   private static final int DEFAULT_LINEARALLOC_LIMIT = 16777216;
   private final boolean multidexEnabled;
-  private final Keystore keystore;
+  @Nullable private final Keystore keystore;
   private final Set<String> cpuFilters;
   private final int linearAllocHardLimit;
   private final List<String> primaryDexPatterns;
@@ -42,7 +43,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
   private final boolean minifyEnabled;
   private final Map<String, Object> placeholders = new LinkedHashMap<>();
   private final boolean includesVectorDrawables;
-  private final AndroidAppInstrumentationTarget appInstrumentationTarget;
+  @Nullable private final AndroidAppInstrumentationTarget appInstrumentationTarget;
 
   public AndroidAppTarget(Project project, String name, boolean isTest) {
     super(project, name, isTest);
@@ -154,7 +155,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     return super.processManifestXml(manifestXml);
   }
 
-  public ExoPackageScope getExopackage() {
+  @Nullable public ExoPackageScope getExopackage() {
     if (getProp(getOkbuck().exopackage, false)) {
       return new ExoPackageScope(getProject(), getMain(), exoPackageDependencies, getManifest());
     } else {
@@ -162,7 +163,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     }
   }
 
-  public String getProguardConfig() {
+  @Nullable public String getProguardConfig() {
     if (minifyEnabled) {
       Set<File> proguardFiles =
           new ImmutableSet.Builder<File>()
@@ -202,7 +203,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     return null;
   }
 
-  public String getProguardMapping() {
+  @Nullable public String getProguardMapping() {
     if (proguardMappingFile == null) {
       return null;
     }
@@ -215,7 +216,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     return getProp(transform.transforms, ImmutableList.of());
   }
 
-  private Keystore extractKeystore() {
+  @Nullable private Keystore extractKeystore() {
     SigningConfig config = getBaseVariant().getMergedFlavor().getSigningConfig();
 
     if (config == null) {
@@ -237,7 +238,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     return multidexEnabled;
   }
 
-  public final Keystore getKeystore() {
+  @Nullable public final Keystore getKeystore() {
     return keystore;
   }
 
@@ -265,7 +266,7 @@ public class AndroidAppTarget extends AndroidLibTarget {
     return includesVectorDrawables;
   }
 
-  public final AndroidAppInstrumentationTarget getAppInstrumentationTarget() {
+  @Nullable public final AndroidAppInstrumentationTarget getAppInstrumentationTarget() {
     return appInstrumentationTarget;
   }
 

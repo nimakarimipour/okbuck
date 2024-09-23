@@ -23,10 +23,10 @@ import org.w3c.dom.NodeList;
 public class ExoPackageScope extends Scope {
 
   private final Scope base;
-  private final String manifest;
+  @Nullable private final String manifest;
 
   ExoPackageScope(
-      Project project, Scope base, List<String> exoPackageDependencies, String manifest) {
+      Project project, Scope base, List<String> exoPackageDependencies, @Nullable String manifest) {
     super(project, null, ImmutableSet.of(), ImmutableSet.of(), base.getCompilerOptions());
     this.base = base;
     this.manifest = manifest;

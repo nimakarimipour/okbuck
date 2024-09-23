@@ -12,20 +12,21 @@ import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 @SuppressWarnings("unchecked")
 public abstract class Rule<T extends Rule> extends DefaultRockerModel {
 
   private static Set<String> DEFAULT_VISIBILITY = ImmutableSet.of("PUBLIC");
 
-  protected String ruleType;
-  protected String name;
+  @Nullable protected String ruleType;
+  @Nullable protected String name;
   protected Collection visibility = ImmutableSet.of();
-  protected Collection deps = ImmutableSet.of();
+  @Nullable protected Collection deps = ImmutableSet.of();
   protected Collection labels = ImmutableSet.of();
   protected Collection extraBuckOpts = ImmutableSet.of();
 
-  public String name() {
+  @Nullable public String name() {
     return name;
   }
 
@@ -39,7 +40,7 @@ public abstract class Rule<T extends Rule> extends DefaultRockerModel {
     return (T) this;
   }
 
-  public T deps(Collection deps) {
+  public T deps(@Nullable Collection deps) {
     this.deps = deps;
     return (T) this;
   }

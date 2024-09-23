@@ -4,13 +4,14 @@ import com.fizzed.rocker.RockerModel;
 import com.fizzed.rocker.RockerTemplate;
 import com.fizzed.rocker.runtime.DefaultRockerTemplate;
 import java.util.Collection;
+import javax.annotation.Nullable;
 
 public abstract class RuleTemplate extends DefaultRockerTemplate {
 
-  protected String ruleType;
-  protected String name;
+  @Nullable protected String ruleType;
+  @Nullable protected String name;
   protected Collection visibility;
-  protected Collection deps;
+  @Nullable protected Collection deps;
   protected Collection labels;
   protected Collection extraBuckOpts;
 

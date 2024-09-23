@@ -24,6 +24,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.tuple.Pair;
 import org.gradle.api.Project;
+import javax.annotation.Nullable;
 
 public final class TransformManager {
 
@@ -49,7 +50,7 @@ public final class TransformManager {
 
   private final Project rootProject;
 
-  private ImmutableSet<String> deps;
+  @Nullable private ImmutableSet<String> deps;
 
   private Map<Path, String> configFileToPathMap;
 

@@ -120,7 +120,7 @@ public class AnnotationProcessorCache {
    * @param configuration Configuration which is used to query the deps.
    * @return A boolean whether the configuration has any empty annotation processors.
    */
-  public boolean hasEmptyAnnotationProcessors(Project project, Configuration configuration) {
+  public boolean hasEmptyAnnotationProcessors(Project project, @Nullable Configuration configuration) {
     Map<Set<Dependency>, Scope> depToScope =
         createProcessorScopes(project, configuration.getAllDependencies(), false);
 

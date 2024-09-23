@@ -78,8 +78,8 @@ public abstract class AndroidTarget extends JvmTarget {
   private final boolean lintExclude;
   private final boolean testExclude;
   private final boolean isTest;
-  private String manifestPath;
-  private String packageName;
+  @Nullable private String manifestPath;
+  @Nullable private String packageName;
 
   public AndroidTarget(Project project, String name, boolean isTest) {
     super(project, name);
@@ -365,7 +365,7 @@ public abstract class AndroidTarget extends JvmTarget {
         .collect(Collectors.toSet());
   }
 
-  public String getPackage() {
+  @Nullable public String getPackage() {
     if (packageName == null) {
       ensureManifest();
     }
@@ -373,7 +373,7 @@ public abstract class AndroidTarget extends JvmTarget {
     return packageName;
   }
 
-  public String getManifest() {
+  @Nullable public String getManifest() {
     if (manifestPath == null) {
       ensureManifest();
     }
@@ -722,7 +722,7 @@ public abstract class AndroidTarget extends JvmTarget {
   }
 
   @Override
-  public <T> T getProp(Map<String, T> map, T defaultValue) {
+  public <T> T getProp(Map<String, T> map, @Nullable T defaultValue) {
     String nameKey = getIdentifier() + StringUtils.capitalize(getName());
     String flavorKey = getIdentifier() + StringUtils.capitalize(getFlavor());
     String buildTypeKey = getIdentifier() + StringUtils.capitalize(getBuildType());
