@@ -204,13 +204,17 @@ public abstract class AndroidTarget extends JvmTarget {
   @Override
   public Scope getApt() {
     Configuration configuration = getConfigurationFromVariant(getBaseVariant());
-    return getAptScopeForConfiguration(configuration);
+    return configuration != null
+        ? getAptScopeForConfiguration(configuration)
+        : Scope.builder(getProject()).build();
   }
 
   @Override
   public Scope getTestApt() {
     Configuration configuration = getConfigurationFromVariant(getUnitTestVariant());
-    return getAptScopeForConfiguration(configuration);
+    return configuration != null
+        ? getAptScopeForConfiguration(configuration)
+        : Scope.builder(getProject()).build();
   }
 
   @Override
